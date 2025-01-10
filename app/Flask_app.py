@@ -1,14 +1,12 @@
-
 # Flask App Template
-# Este es el módulo principal de Flask que importa las funciones necesarias para crear la aplicación, renderizar plantillas HTML, manejar solicitudes y responder con JSON.
 
-from flask import Flask, render_template, request, jsonify  
+from flask import Flask, render_template, request, jsonify  # Este es el módulo principal de Flask que importa las funciones necesarias para crear la aplicación, renderizar plantillas HTML, manejar solicitudes y responder con JSON.
 
 # Create Flask app
 app = Flask(__name__)  # Crea una instancia de la aplicación Flask. '__name__' indica el módulo actual, lo cual ayuda a Flask a encontrar recursos.
 
 # Configuration settings
-#app.config['SECRET_KEY'] = 'your_secret_key_here'  # Establece una clave secreta utilizada para la seguridad de la aplicación, como firmar cookies o manejar sesiones.
+app.config['SECRET_KEY'] = 'your_secret_key_here'  # Establece una clave secreta utilizada para la seguridad de la aplicación, como firmar cookies o manejar sesiones.
 app.config['DEBUG'] = True  # Activa el modo de depuración para desarrollo. Cambiar a False en producción.
 
 # Routes
@@ -36,4 +34,3 @@ def internal_error(error):
 # Run the app
 if __name__ == '__main__':  # Comprueba si el archivo se ejecuta directamente y no como módulo importado.
     app.run(host='0.0.0.0', port=5000)  # Inicia el servidor Flask en todas las interfaces de red ('0.0.0.0') en el puerto 5000.
-
